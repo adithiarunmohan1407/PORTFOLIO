@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ExternalLink, Layers, ArrowRight, X, Check, Laptop, Terminal } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ExternalLink, Layers, ArrowRight, X, Check, Laptop, Terminal, ArrowLeft } from 'lucide-react';
 import { Project } from '../data';
 import { useCMS } from '../context/CMSContext';
 
@@ -7,6 +7,22 @@ export const Projects: React.FC = () => {
   const cms = useCMS();
   const [activeTab, setActiveTab] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
+
+  const closeModal = () => setActiveModalProject(null);
+
+  // Close modal on ESC key press & lock body scroll while open
+  useEffect(() => {
+    if (!activeModalProject) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [activeModalProject]);
 
   const filterTabs = ['All', 'AI / ML', 'Full Stack', 'Web App'];
 
@@ -159,13 +175,29 @@ export const Projects: React.FC = () => {
 
       {/* Stunning High-Fidelity Project Interactive Deep Dive Modal */}
       {activeModalProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto">
-          <div className="relative w-full max-w-4xl p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl my-8 overflow-hidden animate-in zoom-in-95 duration-200">
+        <div 
+          className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
+          onClick={closeModal}
+        >
+          {/* Persistent floating Back to Portfolio button (top-left corner of screen) */}
+          <button
+            onClick={closeModal}
+            aria-label="Return back to portfolio"
+            className="fixed top-4 sm:top-6 left-4 sm:left-6 z-[60] flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-extrabold text-xs sm:text-sm shadow-2xl shadow-indigo-500/50 border-2 border-white/20 hover:scale-105 active:scale-95 transition-all cursor-pointer group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span>Back to Portfolio</span>
+          </button>
+
+          <div 
+            className="relative w-full max-w-4xl p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl my-8 overflow-hidden animate-in zoom-in-95 duration-200 mt-16 sm:mt-8"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             {/* Modal Header Row */}
-            <div className="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
+            <div className="flex items-start justify-between pb-6 border-b border-slate-200 dark:border-slate-800 gap-4">
+              <div className="space-y-1 min-w-0 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span className="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-400 font-black text-xs">
                     {activeModalProject.category}
                   </span>
@@ -179,12 +211,16 @@ export const Projects: React.FC = () => {
                 </p>
               </div>
 
-              <button
-                onClick={() => setActiveModalProject(null)}
-                className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
-              >
-                <X className="w-6 h-6" />
-              </button>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  onClick={closeModal}
+                  title="Close & return to portfolio"
+                  aria-label="Close details and return to portfolio"
+                  className="p-3 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-500 hover:bg-rose-500 hover:text-white transition-colors cursor-pointer border border-rose-200 dark:border-rose-800"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
             </div>
 
             {/* Modal Body Layout */}
@@ -292,6 +328,20 @@ export const Projects: React.FC = () => {
 
               </div>
 
+            </div>
+
+            {/* Prominent Return to Portfolio Button at Bottom */}
+            <div className="pt-6 mt-4 border-t-2 border-dashed border-slate-200 dark:border-slate-700">
+              <button
+                onClick={closeModal}
+                className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-extrabold text-base shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 active:scale-98 transition-all cursor-pointer group"
+              >
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1.5 transition-transform" />
+                <span>Return Back to Portfolio</span>
+              </button>
+              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-3 font-medium">
+                💡 You can also press <kbd className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded font-mono text-[10px] border border-slate-200 dark:border-slate-700">Esc</kbd> key or click outside the panel to return
+              </p>
             </div>
 
           </div>

@@ -204,30 +204,12 @@ export const PROJECTS_DATA: Project[] = [
       "Resource matching with curated online courses and tutorials",
       "Secure user dashboard for tracking skill acquisition milestones"
     ],
-    technologies: ["Python", "Django", "AI", "PostgreSQL", "HTML", "CSS", "JavaScript"],
+    technologies: ["Python", "AI", "PostgreSQL", "HTML", "CSS", "JavaScript"],
     category: "AI / ML",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
     color: "from-indigo-500 to-blue-600",
     githubUrl: "https://github.com/adithiarunmohan1407",
-    liveUrl: "https://careergo-adithi.vercel.app" // representative preview link
-  },
-  {
-    id: "cineverse",
-    title: "CineVerse AI",
-    subtitle: "Movie Recommendation System",
-    description: "A movie recommendation web application that suggests films based on user preferences. It provides personalized recommendations, detailed movie information, and an intuitive interface for discovering movies.",
-    extendedDescription: "CineVerse AI elevates movie night by utilizing sophisticated machine learning recommendation algorithms. By analyzing user viewing histories, genre affinities, and rating patterns, CineVerse provides highly accurate movie picks. Features include high-fidelity movie synopsis cards, interactive cast lists, trailers, and personal watchlists.",
-    keyFeatures: [
-      "Hybrid ML recommendation engine (Content-based & Collaborative)",
-      "Rich movie discovery catalog with advanced search filters",
-      "Dynamic personalized user watchlists & rating bookmarks",
-      "High-performance SQLite database optimized for fast retrieval"
-    ],
-    technologies: ["Python", "Django", "Machine Learning", "SQLite", "HTML", "CSS", "JavaScript"],
-    category: "AI / ML",
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop",
-    color: "from-purple-500 to-pink-600",
-    githubUrl: "https://github.com/adithiarunmohan1407"
+    liveUrl: "https://career-b5gl1pzbv-adithiarunmohan1407s-projects.vercel.app/"
   },
   {
     id: "medicore",
@@ -241,11 +223,12 @@ export const PROJECTS_DATA: Project[] = [
       "Strict role-based authenticated workspaces (Admin, Pharmacist, Auditor)",
       "Real-time PostgreSQL analytics dashboard with batch expiry alerts"
     ],
-    technologies: ["Python", "Django", "PostgreSQL", "Machine Learning"],
+    technologies: ["Python", "PostgreSQL", "Machine Learning"],
     category: "Full Stack",
     image: "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?q=80&w=1200&auto=format&fit=crop",
     color: "from-emerald-500 to-teal-600",
-    githubUrl: "https://github.com/adithiarunmohan1407"
+    githubUrl: "https://github.com/adithiarunmohan1407",
+    liveUrl: "https://medicoreai-18f4esj7y-adithiarunmohan1407s-projects.vercel.app/"
   }
 ];
 
@@ -307,7 +290,7 @@ export const EDUCATION_DATA: TimelineItem[] = [
   {
     role: "B.Tech in Computer Science and Engineering",
     organization: "NSS College of Engineering",
-    period: "Third Year (2022 - 2026)",
+    period: "2024 - 2028",
     description: "Currently pursuing Bachelor of Technology in Computer Science and Engineering with focus on Software Engineering, Data Structures, Algorithms, AI, and Database Systems.",
     highlights: [
       "Outstanding CGPA: 8.75 / 10",
