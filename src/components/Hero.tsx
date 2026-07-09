@@ -163,7 +163,7 @@ export const Hero: React.FC = () => {
                 
                 {/* Professional Profile Photo of Adithi A M */}
                 <img 
-                  src="C:\Users\User\Desktop\portfolio\public\images\adithi.jpg" 
+                  src="\images\adithi.jpg" 
                   alt="Adithi A M - Computer Science Engineering Student"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" 
                 />
