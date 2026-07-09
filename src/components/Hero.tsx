@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const titlesList = heroData.titles || [
-    "Python Developer", "Web Developer", "AI Enthusiast", "Computer Science Student", "Future Software Engineer"
+    "Python Developer", "Web Developer", "AI ML Enthusiast", "Computer Science Student", "Future Software Engineer"
   ];
   const fullTitle = titlesList[currentTitleIndex % titlesList.length] || "Python Developer";
 
