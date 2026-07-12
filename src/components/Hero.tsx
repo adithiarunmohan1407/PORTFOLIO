@@ -204,7 +204,7 @@ export const Hero: React.FC = () => {
               {/* Floating Technology Badge 3: CGPA Badge */}
               <div className="absolute top-1/2 -right-8 -translate-y-1/2 bg-gradient-to-br from-amber-500 to-orange-600 text-white p-3 rounded-2xl shadow-lg font-bold flex flex-col items-center justify-center shadow-amber-500/20">
                 <span className="text-xs uppercase tracking-wider opacity-90">CGPA</span>
-                <span className="text-lg">8.75</span>
+                <span className="text-lg">8.91</span>
               </div>
 
             </div>
