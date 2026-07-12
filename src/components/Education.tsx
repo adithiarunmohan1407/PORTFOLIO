@@ -113,7 +113,7 @@ export const Education: React.FC = () => {
                               <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover/card:scale-125 transition-transform" />
                               <Trophy className="w-6 h-6 mb-2 opacity-90" />
                               <p className="text-xs font-bold uppercase tracking-wider opacity-80">Academic Score</p>
-                              <p className="text-2xl font-black mt-1">8.75 / 10</p>
+                              <p className="text-2xl font-black mt-1">8.91 / 10</p>
                               <p className="text-xs font-semibold opacity-80 mt-0.5">Outstanding CGPA</p>
                             </div>
 

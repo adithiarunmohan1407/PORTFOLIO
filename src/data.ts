@@ -72,12 +72,12 @@ export const ABOUT_DATA = {
     degree: "B.Tech in Computer Science and Engineering",
     institution: "NSS College of Engineering",
     year: "Third Year",
-    cgpa: "8.75",
+    cgpa: "8.91",
     honors: "Excellent Academic Standing"
   },
   quickFacts: [
     { label: "Degree", value: "B.Tech CSE (3rd Year)" },
-    { label: "Current CGPA", value: "8.75 / 10" },
+    { label: "Current CGPA", value: "8.91 / 10" },
     { label: "Core Expertise", value: "Python, AI & Web Dev" },
     { label: "Location", value: "Palakkad, Kerala, India" }
   ]
@@ -293,7 +293,7 @@ export const EDUCATION_DATA: TimelineItem[] = [
     period: "2024 - 2028",
     description: "Currently pursuing Bachelor of Technology in Computer Science and Engineering with focus on Software Engineering, Data Structures, Algorithms, AI, and Database Systems.",
     highlights: [
-      "Outstanding CGPA: 8.75 / 10",
+      "Outstanding CGPA: 8.91 / 10",
       "Active participant in technical symposiums and campus developer bodies",
       "Specialized electives: Advanced Machine Learning, Web Engineering"
     ],

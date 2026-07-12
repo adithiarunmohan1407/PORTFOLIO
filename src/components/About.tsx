@@ -200,7 +200,7 @@ export const About: React.FC = () => {
                 <div className="flex flex-col items-center justify-center p-8 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-600 to-indigo-600 text-white shadow-xl shadow-emerald-500/25 shrink-0 hover:scale-105 transition-transform duration-300">
                   <span className="text-xs uppercase font-extrabold tracking-widest opacity-80">Outstanding</span>
                   <span className="text-5xl sm:text-6xl font-extrabold tracking-tight my-1">
-                    {aboutData.academicCard?.cgpa || "8.75"}
+                    {aboutData.academicCard?.cgpa || "8.91"}
                   </span>
                   <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full mt-2">
                     Current CGPA

@@ -70,7 +70,7 @@ interface CMSContextType {
 
 const CMSContext = createContext<CMSContextType | null>(null);
 
-const STORAGE_KEY = 'adithi_portfolio_cms_data_v5';
+const STORAGE_KEY = 'adithi_portfolio_cms_data_v6';
 const ADMIN_AUTH_KEY = 'adithi_portfolio_admin_auth';
 
 export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
